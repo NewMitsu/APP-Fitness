@@ -1,0 +1,265 @@
+/* Basic reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #1976d2;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+#nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+#nav button {
+    background-color: #ffffff;
+    color: #1976d2;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+#nav button:hover {
+    background-color: #e3f2fd;
+}
+
+main {
+    padding: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Login/Register form styling */
+.auth-container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+.auth-container h2 {
+    margin-bottom: 1rem;
+}
+
+.auth-container input,
+.auth-container button {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.auth-container button {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.auth-container button:hover {
+    background-color: #135ca1;
+}
+
+/* Calendar grid */
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.day {
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    position: relative;
+}
+
+.day:hover {
+    transform: translateY(-2px);
+}
+
+.day h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.progress-bar {
+    height: 6px;
+    background-color: #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-bar-inner {
+    height: 100%;
+    width: 0;
+    background-color: #1976d2;
+    transition: width 0.3s ease;
+}
+
+.badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #e0e0e0;
+    color: #444;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/* Modal styling */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 2rem;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 8px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #444;
+}
+
+/* Task list */
+.task {
+    border-bottom: 1px solid #eee;
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task:last-child {
+    border-bottom: none;
+}
+
+.task label {
+    flex: 1;
+    margin-right: 0.5rem;
+}
+
+.task input[type="number"] {
+    width: 60px;
+    padding: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.task span.unit {
+    margin-left: 0.3rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.task p.desc {
+    font-size: 0.8rem;
+    margin: 0.2rem 0;
+    color: #777;
+}
+
+#feedback {
+    width: 100%;
+    height: 60px;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.modal-footer {
+    margin-top: 1rem;
+    text-align: right;
+}
+
+.modal-footer button {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.modal-footer button:hover {
+    background-color: #135ca1;
+}
+
+/* Badges colors */
+.badge.badge-10 {
+    background-color: #ffcdd2;
+}
+.badge.badge-30 {
+    background-color: #ffe082;
+}
+.badge.badge-50 {
+    background-color: #bbdefb;
+}
+.badge.badge-100 {
+    background-color: #c8e6c9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .calendar {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}

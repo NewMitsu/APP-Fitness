@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training PWA</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#1976d2">
+</head>
+<body>
+    <header>
+        <h1>Training Planner</h1>
+        <nav id="nav">
+            <!-- Buttons are injected dynamically based on auth state -->
+        </nav>
+    </header>
+    <main id="app">
+        <!-- Content dynamically inserted here -->
+    </main>
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="closeModal" class="close-button">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Settings modal for user preferences -->
+    <div id="settingsModal" class="modal hidden">
+        <div class="modal-content">
+            <span id="closeSettings" class="close-button">&times;</span>
+            <div id="settingsBody"></div>
+        </div>
+    </div>
+
+    <!-- Statistics modal for showing progress charts -->
+    <div id="statsModal" class="modal hidden">
+        <div class="modal-content">
+            <span id="closeStats" class="close-button">&times;</span>
+            <div id="statsBody"></div>
+        </div>
+    </div>
+    <!-- Include Chart.js for graph visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
